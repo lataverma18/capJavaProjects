@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context/ 
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+<bean id="g1" class="cap.beans.Greet"></bean>    
+    
+
+    
+ <bean id="emp" class="cap.beans.Employee" init-method="start" destroy-method="myDestroy" autowire="byName">
+ 			<property name="eid" value="101"></property>
+ 			<property name="ename" value="Ronit"></property>
+ 			<property name="esalary" value="56000"></property>
+ 			
+ 	<!-- <constructor-arg name="esalary" type="int" value="56000"></constructor-arg>
+ 	<constructor-arg name="eid" type="int"  value="101"></constructor-arg>
+ 	<constructor-arg name="ename" type="java.lang.String" value="Ronit"></constructor-arg>
+ 	<constructor-arg name="address" type="cap.beans.Address" ref="add1"></constructor-arg>
+ 	 -->
+  </bean>
+ 
+ <bean id="address" class="cap.beans.Address" scope="prototype">
+ <property name="address" value="E-1978/50"></property>
+ <property name="city" value="New Delhi"></property>
+ <property name="state" value="Delhi"></property>
+ <property name="zipcode" value="110011"></property>
+ </bean>
+ <bean id="address1" class="cap.beans.Address" scope="prototype">
+ <property name="address" value="E-1368/50"></property>
+ <property name="city" value="Gurugram"></property>
+ <property name="state" value="Haryana"></property>
+ <property name="zipcode" value="122011"></property>
+ </bean>
+ 
+ <bean id="cb" class="cap.beans.CollectionBean">
+ <property name="lists">
+ 	<list>
+ 		<value>1</value>
+ 		<ref bean="emp"></ref>
+ 		<ref bean="address"></ref>
+ 		<bean class="cap.beans.Employee">
+ 			<property name="eid" value="2"></property>
+ 			<property name="ename" value="Rita"></property>
+ 			<property name="esalary" value="52000"></property>
+ 			<property name="address1" ref="address"></property>
+ 		</bean>
+ 	</list>
+ </property>
+ <property name="sets">
+ 	<set>
+ 		<value>1</value>
+ 		<ref bean="emp"></ref>
+ 		<bean class="cap.beans.Employee">
+ 			<property name="eid" value="3"></property>
+ 			<property name="ename" value="Neha"></property>
+ 			<property name="esalary" value="45000"></property>
+ 			<property name="address1" ref="address"></property>
+ 		</bean>
+ 	</set>
+ </property>
+ <property name="maps">
+ 	<map>
+ 		<entry key="101" value="2000" />
+ 		<entry key="102" value-ref="emp" />
+ 		<entry key="103">
+ 			<bean class="cap.beans.Employee">
+ 			<property name="eid" value="4"></property>
+ 			<property name="ename" value="Kumud"></property>
+ 			<property name="esalary" value="35000"></property>
+ 			<property name="address1" ref="address"></property>
+ 		</bean>
+ 		</entry>
+ 	</map>
+ </property>
+ <property name="properties">
+ 	<props>
+ 		<prop key="dev">dev@capg.com</prop>
+ 		<prop key="support">support@capg.com</prop>
+ 	</props>
+ </property>
+ </bean>
+</beans>
+
+
