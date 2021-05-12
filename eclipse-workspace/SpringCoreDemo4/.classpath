@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Dependencies/jar_files/jackson-annotations-2.9.0.jar"/>
+	<classpathentry kind="lib" path="C:/Dependencies/jar_files/jackson-core-2.9.4.jar"/>
+	<classpathentry kind="lib" path="C:/Dependencies/jar_files/jackson-databind-2.9.4.jar"/>
+	<classpathentry kind="lib" path="C:/Dependencies/jar_files/jackson-datatype-jsr310-2.9.4.jar"/>
+	<classpathentry kind="lib" path="C:/Dependencies/jar_files/joda-time-2.9.9.jar"/>
+	<classpathentry kind="lib" path="C:/Dependencies/jar_files/rest-1.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/Dependencies/jar_files/spring-aop-5.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Dependencies/jar_files/spring-beans-5.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Dependencies/jar_files/spring-context-5.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Dependencies/jar_files/spring-core-5.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Dependencies/jar_files/spring-expression-5.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Dependencies/jar_files/spring-jcl-5.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Dependencies/jar_files/spring-web-5.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Dependencies/jar_files/spring-webmvc-5.0.3.RELEASE.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
