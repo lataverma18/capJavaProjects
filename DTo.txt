@@ -1,0 +1,39 @@
+Create two classes
+
+ProductDto-----In <base package name>.dto package (Validation Annotations on this class)
+ProductMapper-----In <base package name>.mapper package
+
+-----------------------------------------------------------
+
+Controller:-PostMapping Handler method in Controller
+-----------------------------------------------------------
+public ModelAndView addPDetails(@Valid @ModelAttribute ProductDto productDto, BindingResult result)
+	{
+		ModelAndView mv=new ModelAndView("addProductDetails");
+		System.out.println(product);
+		System.out.println(result.getErrorCount());
+		if(!result.hasErrors())
+		{
+		
+			int pid=pserv.addProduct(productDto);
+			mv.addObject("message","Your Product with id "+pid+" Added Successfully");
+		}
+		
+		return mv;
+	}
+
+
+-----------------------------------------------------------------
+ServiceImpl:- addProduct() in Service Layer
+-----------------------------------------------------------------
+public int addProduct(ProductDto productDto) {
+
+		ProductMapper em=new ProductMapper(productDto);
+		Product p=em.getProduct();
+		
+		return pdao.addProduct(p);
+	}
+
+
+
+
